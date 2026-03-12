@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYHAVEN - Admin</title>
+    
+    <style>
+        /* Modern Color Scheme */
+        :root {
+            --primary-blue: #2A4E6E;
+            --accent-blue: #3A6B8F;
+            --light-bg: #F5F7FA;
+            --success: #4CAF50;
+            --warning: #FF9800;
+            --danger: #F44336;
+            --text-dark: #2D3748;
+            --text-light: #718096;
+        }
+
+        body {
+            background: var(--light-bg);
+            overflow-x: hidden;
+        }
+
+        .databox {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding: 1.5rem;
+        }
+
+        .databox .box {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .databox .box:hover {
+            transform: translateY(-5px);
+        }
+
+        .box h2 {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .box h1 {
+            color: var(--primary-blue);
+            font-size: 2.5rem;
+            font-weight: 600;
+        }
+
+        .box.profitbox h1 {
+            color: var(--success);
+        }
+
+        .chartbox {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            padding: 0 1.5rem;
+        }
+
+        .profitchart, .bookroomchart {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chart-header {
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        /* Modern Sidebar */
+        .sidenav {
+            background: var(--primary-blue);
+            padding: 1.5rem;
+            height: 100vh;
+            position: fixed;
+            width: 240px;
+        }
+
+        .sidenav li {
+            color: white;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .sidenav li:hover {
+            background: var(--accent-blue);
+        }
+
+        .sidenav li.active {
+            background: var(--accent-blue);
+            box-shadow: inset 3px 0 0 #fff;
+        }
+
+        /* Main Content Area */
+        .mainscreen {
+            margin-left: 240px;
+            padding: 2rem;
+        }
+
+        /* Modern Navigation */
+        .uppernav {
+            background: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-blue);
+        }
+        
+.uppernav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2.5rem;
+    background: #ffffff;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    height: 70px;
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logout .btn-primary {
+    background: #2A4E6E;
+    color: white;
+    padding: 0.8rem 1.8rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logout .btn-primary:hover {
+    background: #1A3A5A;
+    box-shadow: 0 4px 12px rgba(42, 78, 110, 0.2);
+}
+
+.logout .btn-primary::before {
+    content: "\f2f5";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .uppernav {
+        padding: 1rem;
+    }
+    
+    .logo {
+        height: 35px;
+    }
+    
+    .btn-primary {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+/* Add to your existing CSS */
+.sidenav {
+    width: 250px;
+    background-color: #333;
+    padding: 20px;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.nav-item a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+}
+
+.nav-item .icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.nav-item:hover {
+    background-color: #444;
+}
+
+.nav-item:hover .icon {
+    color: #ff6347;  /* Change icon color on hover */
+}
+
+.nav-item:hover .text {
+    color: #ff6347;  /* Change text color on hover */
+}
+
+</style>
+
+<nav class="uppernav">
+    <img src="/client and landing/landing/Elements/images/logo.png" alt="Logo" class="logo">
+    <div class="logout">
+        <button class="btn-primary">Logout</button>
+    </div>
+</nav>
+   
+</head>
+
+<body>
+    <!-- Navigation -->
+   
+
+    <nav class="sidenav">
+        <ul>
+            <li class="nav-item">
+                <a href="#addRemoveStaff.html">
+                    <span class="icon">👥</span> 
+                    <span class="text">Staff</span>
+                </a>
+            </li>
+    
+            <li class="nav-item">
+                <a href="#roomBooking">
+                    <span class="icon">🛏️</span>
+                    <span class="text">Room Booking</span>
+                </a>
+            </li>
+    
+            <li class="nav-item">
+                <a href="#payments">
+                    <span class="icon">💳</span>
+                    <span class="text">Payments</span>
+                </a>
+            </li>
+    
+            <li class="nav-item">
+                <a href="#rooms">
+                    <span class="icon">🏨</span>
+                    <span class="text">Rooms</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
+
+    <!-- Main Content -->
+    <main class="mainscreen">
+        <!-- Data Cards -->
+        <div class="databox">
+            <div class="box">
+                <h2>Total Booked Rooms</h2>
+                <h1>5/17</h1>
+                <div class="trend up">▲ 12%</div>
+            </div>
+            <div class="box">
+                <h2>Total Staff</h2>
+                <h1>3,000</h1>
+            </div>
+            <div class="box profitbox">
+                <h2>Total Profit</h2>
+                <h1>₽3,240</h1>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="chartbox">
+            <div class="bookroomchart">
+                <h3 class="chart-header">Room Distribution</h3>
+                <canvas id="bookroomchart"></canvas>
+            </div>
+            <div class="profitchart">
+                <h3 class="chart-header">Profit Trends</h3>
+                <div id="profitchart"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Chart Scripts -->
+    <script>
+        // Updated Doughnut Chart
+        const roomChart = new Chart(document.getElementById('bookroomchart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Superior', 'Deluxe', 'Guest House', 'Single'],
+                datasets: [{
+                    data: [32, 28, 25, 15],
+                    backgroundColor: [
+                        '#2A4E6E',
+                        '#3A6B8F',
+                        '#4CAF50',
+                        '#FF9800'
+                    ],
+                    borderWidth: 0,
+                }]
+            },
+            options: {
+                cutout: '70%',
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20
+                        }
+                    }
+                }
+            }
+        });
+
+        // Modern Bar Chart
+        new Morris.Bar({
+            element: 'profitchart',
+            data: [
+                { date: '2022-11-12', profit: 1200 },
+                { date: '2022-11-15', profit: 1800 },
+                { date: '2022-11-29', profit: 3240 }
+            ],
+            xkey: 'date',
+            ykeys: ['profit'],
+            labels: ['Profit (₽)'],
+            barColors: ['#2A4E6E'],
+            gridTextColor: '#718096',
+            hideHover: 'auto',
+            resize: true,
+            axes: false,
+            grid: false
+        });
+    </script>
+</body>
+</html>

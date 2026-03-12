@@ -1,0 +1,288 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #da9b0a !important;
+}
+.navbar-brand {
+    color: #ffffff !important;
+}
+.btn-primary, .btn-success, .btn-info, .btn-warning {
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+.btn-primary:hover, .btn-success:hover, .btn-info:hover, .btn-warning:hover {
+    opacity: 0.9;
+}
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+   margin-left: 20px; 
+    padding: 10px 0; 
+}
+
+.table {
+    margin-top: 20px;
+}
+.table thead {
+    background-color: #08315e;
+    color: white;
+}
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+/* Card Styling */
+.card {
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Header Styling */
+.card-header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 12px 12px 0 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Card Body Styling */
+.card-body {
+    background-color: white;
+    padding: 30px;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Form Layout */
+.form-label {
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Input Fields */
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Time Slot Input */
+input[type="time"] {
+    padding: 10px;
+}
+
+/* File Input Styling */
+input[type="file"] {
+    padding: 6px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Row Spacing */
+.row.mb-3 {
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+button {
+    font-weight: 600;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    cursor: pointer;
+}
+
+/* Add Doctor Button */
+.btn-purple {
+    background-color: #6f42c1;
+    color: white;
+}
+.btn-purple:hover {
+    background-color: #563d7c;
+}
+.btn-success:hover {
+    background-color: #28a745;
+}
+.btn-warning:hover {
+    background-color: #ffc107;
+}
+
+/* Buttons - Full Width on Mobile */
+@media (max-width: 768px) {
+    button {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .row.mb-3 .col-md-4 {
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+}
+
+/* Max Appointment Field Styling */
+input[type="number"] {
+    padding: 12px 15px;
+}
+
+/* Form Styling - Professional Look */
+input[type="text"], input[type="number"], input[type="time"], select, textarea {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="time"]:focus, select:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+/* Label Styling */
+label {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+/* Section Spacing */
+.mb-3 {
+    margin-bottom: 30px !important;
+}
+
+/* Remove Button Styling */
+#removeDoctor {
+    background-color: #f8f9fa;
+    color: #dc3545;
+    border: 1px solid #dc3545;
+}
+
+#removeDoctor:hover {
+    background-color: #f1f1f1;
+    color: #c82333;
+}
+
+/* Add a bit of padding around the form */
+.form-group {
+    padding-bottom: 15px;
+}
+
+/* Focus Effect */
+input:focus, select:focus, textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Spacing between buttons */
+button:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* Input text box border radius */
+input, textarea {
+    border-radius: 8px;
+}
+
+/* Custom Styling for Time Input */
+input[type="time"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* File input button styling */
+input[type="file"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 15px; 
+    margin-left: 20px; 
+    padding: 10px 0; 
+}
+
+/* Table Styling */
+.table {
+    margin-top: 20px;
+}
+
+.table thead {
+    background-color: #08315e;
+    color: white;
+}
+
+/* Profile Image Styling */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+/* Input Group Text */
+.input-group-text {
+    background-color: #08315e;
+    color: white;
+    border: none;
+}
+
+/* Purple Button Styling */
+.btn-purple {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.btn-purple:hover {
+    background-color: #563d7c;
+}
+
+/* Success Button Hover */
+.btn-success:hover {
+    background-color: #28a745;
+}
+
+/* Warning Button Hover */
+.btn-warning:hover {
+    background-color: #ffc107;
+}
